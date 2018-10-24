@@ -5,5 +5,59 @@
 
 
 body,html {
-  font-family: "Nunito Sans";
+  font-family: "Nunito Sans", sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+@import url("https://cdn.jsdelivr.net/npm/animate.css@3.5.1");
+
+.slideInRight {
+
+
+  animation-duration: .4s;
+  animation-timing-function: ease-in-out;
+}
+
+.slideOutLeft {
+  animation-delay: .1s;
+}
+
+
+.page {
+  position: fixed;
+  width: inherit;
+  height: 100vh;
+  background: #f8fbff;
+  overflow-y: scroll;
+
+}
+
+
+
+
+
+::-webkit-scrollbar-track{
+  background: #F8FBFF;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #382d6c;
+}
+
+
+

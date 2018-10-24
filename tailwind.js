@@ -64,7 +64,7 @@ let colors = {
     'zircon-darkest': '#c5deff',
     'zircon-darker': '#d6e8ff',
     'zircon-dark': '#e7f1ff',
-    'zircon': '#F8FBFF',
+    'zircon': '#f8fbff',
 
     'malibu-darkest': '#6673f9',
     'malibu-darker': '#7682fa',
@@ -952,7 +952,7 @@ module.exports = {
         opacity: ['responsive'],
         outline: ['focus'],
         overflow: ['responsive'],
-        padding: ['responsive'],
+        padding: ['responsive', 'hover'],
         pointerEvents: ['responsive'],
         position: ['responsive'],
         resize: ['responsive'],
@@ -993,6 +993,15 @@ module.exports = {
             // center: true,
             // padding: '1rem',
         }),
+
+        require('tailwindcss-transition')({
+            standard: 'all .3s ease',
+            transitions: {
+                'slow': 'all 2s ease',
+                'normal-in-out-quad': 'all .2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+                'slow-in-out-quad': 'all 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+            }
+        })
     ],
 
 

@@ -1,0 +1,19 @@
+<template>
+    <router-link class="focus:outline-none" tag="button" to="/login">
+        <div class="flex items-center">
+            <div style="width: 25px; height: 25px;"
+                 class=" flex items-center justify-center rounded-full inline-block bg-white">
+                <i class="material-icons text-minsk-lighter">
+                    keyboard_arrow_right
+                </i>
+            </div>
+            <p class="inline-block ml-3 text-white"> logout </p>
+        </div>
+    </router-link>
+</template>
+
+<script>
+    export default {
+
+    }
+</script>

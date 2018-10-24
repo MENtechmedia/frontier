@@ -7,17 +7,23 @@
         <title>Frontier | Login</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link href="/css/app.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+
+        </style>
     </head>
-    <body>
+    <body class="bg-zircon">
         <div id="app">
-            <router-view></router-view>
+            <transition name="router-anim" enter-active-class="animated slideInRight" leave-active-class="animated slideOutLeft">
+                <router-view/>
+            </transition>
         </div>
         <script src="/js/app.js"></script>
     </body>

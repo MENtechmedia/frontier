@@ -12,6 +12,8 @@
   "devDependencies": {
     "axios": "^0.18",
     "bootstrap": "^4.0.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.1",
     "jquery": "^3.2",
     "laravel-mix": "^2.0",
@@ -22,6 +24,8 @@
   "dependencies": {
     "laravel-mix-tailwind": "^0.1.0",
     "tailwindcss": "^0.6.5",
-    "vue-router": "^3.0.1"
+    "tailwindcss-transition": "^1.0.5",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   }
 }
