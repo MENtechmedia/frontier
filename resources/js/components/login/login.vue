@@ -11,7 +11,7 @@
                     <h2 class="self-start text-saffron  my-8 "> Login to your account </h2>
 
                     <!-- Company placeholder -->
-                    <icon-input placeholder="your company" type="text" icon="work"></icon-input>
+                    <icon-input placeholder="Your company" type="text" icon="work"></icon-input>
 
                     <!-- E-mail address placeholder -->
                     <icon-input placeholder="Email address" type="email" icon="person"></icon-input>
@@ -43,7 +43,7 @@
                     <icon-input placeholder="Email address" type="email" icon="person"></icon-input>
 
                     <!-- Company placeholder -->
-                    <icon-input placeholder="your company" type="text" icon="work"></icon-input>
+                    <icon-input placeholder="Your company" type="text" icon="work"></icon-input>
 
                     <!-- Password placeholder -->
                     <icon-input placeholder="Password" type="password" icon="lock"></icon-input>

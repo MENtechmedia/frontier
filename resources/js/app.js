@@ -9,6 +9,10 @@ axios.request({
     url: "/oauth/token",
     method: "post",
     baseURL: "https://api.frontier.social",
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Access-Control-Allow-Headers': 'X-CSRF-Token',
+    },
     data: {
         "grant_type": "client_credentials",
         "client_id": '1',
@@ -20,6 +24,9 @@ axios.request({
 
     // add the accesstoken to the authorization header for every request
     window.axios.defaults.headers['Authorization'] = res.data.access_token;
+    window.axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
+    window.axios.defaults.headers['Access-Control-Allow-Headers'] = 'X-CSRF-Token';
+
 });
 
 

@@ -32,6 +32,11 @@
                                        placeholder="repeats every # minutes"/>
                             </toggleable-input-field>
 
+                            <select v-model="social_proof_theme_id" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="type_id" >
+                                <option selected="selected" value="default" disabled>Choose theme</option>
+                                <option v-for="social_proof_theme in social_proof_themes" :value="social_proof_theme.id" > {{ social_proof_theme.name }}</option>
+                            </select>
+
                             <div class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
                                 Save
                             </div>
@@ -86,6 +91,7 @@
 
         data() {
             return {
+                social_proof_themes: [],
                 interval_minutes: 0,
                 repeatable: false,
                 user_generated: false,
@@ -93,11 +99,13 @@
 
                 //
                 types: [],
+                social_proof_theme_id: "default",
             }
         },
 
         mounted() {
             this.all();
+            this.getSocialProofThemes();
         },
 
         methods: {
@@ -107,16 +115,17 @@
                     name: this.name,
                     user_generated: this.user_generated,
                     repeatable: this.repeatable,
-                    interval_minutes: this.interval_minutes
+                    interval_minutes: this.interval_minutes,
+                    social_proof_theme_id: this.social_proof_theme_id
                 }).then((response) => {
-                    console.log(response);
                     this.types.push({
                         id: response.data.id,
                         name: this.name,
                         user_generated: this.user_generated,
                         repeatable: this.repeatable,
-                        interval_minutes: this.interval_minutes
-                    })
+                        interval_minutes: this.interval_minutes,
+                        social_proof_theme_id: this.social_proof_theme_id,
+                });
 
                     this.name = "";
                     this.user_generated = false;
@@ -138,6 +147,12 @@
             all() {
                 axios.get("https://api.frontier.social/api/eventType").then((response) => {
                     this.types = response.data.data;
+                });
+            },
+
+            getSocialProofThemes() {
+                axios.get("https://api.frontier.social/api/socialProofTheme").then((response) => {
+                    this.social_proof_themes = response.data.data;
                 });
             }
         }

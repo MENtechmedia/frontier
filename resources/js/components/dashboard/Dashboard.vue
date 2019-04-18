@@ -22,19 +22,36 @@
                     </span>
                 </router-link>
 
+<!--                <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">-->
+<!--                    <i class="material-icons text-saffron mr-4">send</i>-->
+<!--                    <span class="text-london-hue">-->
+<!--                        Referral-->
+<!--                    </span>-->
+<!--                </router-link>-->
+
+<!--                <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">-->
+<!--                    <i class="material-icons text-saffron mr-4">laptop_mac</i>-->
+<!--                    <span class="text-london-hue">-->
+<!--                        Browser push-->
+<!--                    </span>-->
+<!--                </router-link>-->
+
+                <p class="uppercase font-bold text-snuff mt-6 mb-4"> Settings</p>
+
                 <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
-                    <i class="material-icons text-saffron mr-4">send</i>
+                    <i class="material-icons text-saffron mr-4">attach_money</i>
                     <span class="text-london-hue">
-                        Referral
+                        Subscription
                     </span>
                 </router-link>
 
                 <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
-                    <i class="material-icons text-saffron mr-4">laptop_mac</i>
+                    <i class="material-icons text-saffron mr-4">settings</i>
                     <span class="text-london-hue">
-                        Browser push
+                        Settings
                     </span>
                 </router-link>
+
             </div>
 
             <!--Document-->

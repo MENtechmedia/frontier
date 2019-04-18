@@ -15,26 +15,45 @@
             <div class="w-4/5 mb-10">
                 <content-section>
 
-                    <h1 class=" text-minsk font-black mb-10"> Messages </h1>
+                    <div class="flex">
 
-                    <p class="text-london-hue font-bold mb-6"> Add messages for social proof.</p>
+                        <div class="w-1/3">
+                            <h1 class=" text-minsk font-black mb-10"> Messages </h1>
 
-                    <div class="w-1/3 ">
-                        <input v-model="message" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
-                               placeholder="type name"/>
+                            <p class="text-london-hue font-bold mb-6"> Add messages for social proof.</p>
 
-                        <!--<input v-model="icon" type="text"  class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"-->
-                               <!--placeholder="icon"/>-->
+                                <input v-model="message" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                       placeholder="type name"/>
 
-                        <select v-model="event_type_id" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="type_id" >
-                            <option selected="selected" value="default" disabled>Maak een keuze</option>
-                            <option v-for="type in types" :value="type.id" > {{ type.name }}</option>
-                        </select>
+                                <!--<input v-model="icon" type="text"  class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"-->
+                                       <!--placeholder="icon"/>-->
 
-                        <div @click="add()" class="cursor-pointer bg-saffron text-white px-4 py-2 mt-4 rounded shadow-md inline-block">Save</div>
+                                <select v-model="event_type_id" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="type_id" >
+                                    <option selected="selected" value="default" disabled>Maak een keuze</option>
+                                    <option v-for="type in types" :value="type.id" > {{ type.name }}</option>
+                                </select>
+
+                                <div @click="add()" class="cursor-pointer bg-saffron text-white px-4 py-2 mt-4 rounded shadow-md inline-block">Save</div>
+                        </div>
+
+                        <div class="w-2/3 shadow-md rounded ml-16">
+                            <div class="bg-snuff text-center py-2">
+                                <p class="text-xs font-light">Messages</p>
+                            </div>
+
+                            <div class="py-10 px-12">
+                                <p class="flex justify-between items-center text-minsk py-1" v-for="message in messages">
+                                    <span>{{ message.message }}</span>
+                                    <span class="">
+                                            <i @click="remove(message.id)" class="cursor-pointer material-icons">
+                                                close
+                                            </i>
+                                        </span>
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
-
-
                 </content-section>
             </div>
 
@@ -84,6 +103,8 @@
                     message: this.message,
                     event_type_id: this.event_type_id,
                 });
+
+                this.all();
             },
 
             all() {
@@ -92,8 +113,21 @@
               });
             },
 
+            remove(id) {
+                axios.delete("https://api.frontier.social/api/event/" + id).then((response) => {
+                    let removeIndex = this.messages.map(function(message) {
+                        return message.id;
+                    }).indexOf(id);
+
+                    ~removeIndex && this.messages.splice(removeIndex, 1);
+                }).catch((error) => {
+                    console.log(error);
+                });
+            },
+
             getTypes() {
                 axios.get("https://api.frontier.social/api/eventType").then((response) => {
+                    console.log(response);
                     this.types = response.data.data;
                 });
             }
