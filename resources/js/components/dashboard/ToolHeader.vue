@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="relative w-2/5">
-                    <p class="text-saffron font-bold mb-2">Social proof</p>
+                    <p class="text-saffron font-bold mb-2">{{ tool }}</p>
 
                     <!--Tool title-->
                     <h1 class="text-white mb-5 tracking-wide font-black uppercase"> {{ title }} </h1>
@@ -40,7 +40,7 @@
     import GoBack from '../ui-components/buttons/GoBackButton';
 
     export default {
-        props: ['classes', 'title'],
+        props: ['classes', 'title', 'tool'],
         components: {
             LogoutButton,
             PortraitPhoto,

@@ -1,13 +1,13 @@
 <template>
     <div class="page shadow-md">
-        <tool-header tool="Social Proof" title="Dashboard"></tool-header>
+        <tool-header tool="Email Catcher" title="Dashboard"></tool-header>
 
         <!--Side bar-->
         <div class="container mx-auto flex mt-24">
             <div class="w-1/5 h-12">
 
                 <!--Sidebar-->
-                <social-proof-sidebar></social-proof-sidebar>
+                <email-catcher-sidebar></email-catcher-sidebar>
             </div>
 
             <!-- Content goes here -->
@@ -23,13 +23,13 @@
 <script>
     import ToolHeader from '../../../dashboard/ToolHeader.vue';
     import ContentSection from '../../../ContentSection.vue';
-    import SocialProofSidebar from '../SocialProofSidebar';
+    import EmailCatcherSidebar from '../EmailCatcherSidebar.vue';
 
     export default {
         components: {
             ContentSection,
             ToolHeader,
-            SocialProofSidebar,
+            EmailCatcherSidebar
         }
     }
 </script>

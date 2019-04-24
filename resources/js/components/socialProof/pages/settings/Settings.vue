@@ -1,6 +1,6 @@
 <template>
     <div class="page shadow-md">
-        <tool-header title="settings"></tool-header>
+        <tool-header tool="Social Proof" title="settings"></tool-header>
 
         <!--Side bar-->
         <div class="container mx-auto flex mt-24">

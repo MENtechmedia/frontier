@@ -15,7 +15,7 @@
                     </span>
                 </router-link>
 
-                <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
+                <router-link to="/email-catcher" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
                     <i class="material-icons text-saffron mr-4">mail</i>
                     <span class="text-london-hue">
                         Mail catcher
@@ -39,7 +39,7 @@
                 <p class="uppercase font-bold text-snuff mt-6 mb-4"> Settings</p>
 
                 <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
-                    <i class="material-icons text-saffron mr-4">attach_money</i>
+                    <i class="material-icons text-saffron mr-4">credit_card</i>
                     <span class="text-london-hue">
                         Subscription
                     </span>

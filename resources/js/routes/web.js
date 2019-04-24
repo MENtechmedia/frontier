@@ -15,6 +15,10 @@ Vue.use(VueRouter);
 let routes = [
     { path: '/', component: require('../components/login/Login.vue')},
     { path: '/dashboard', component: require('../components/dashboard/Dashboard.vue')},
+
+    { path: '/email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue')},
+    { path: '/email-catcher/catchers', component: require('../components/emailCatcher/pages/catchers/Catchers.vue')},
+
     { path: '/social-proof', component: require('../components/socialProof/pages/entry/SocialProof.vue')},
     { path: '/social-proof/types', component: require('../components/socialProof/pages/types/Types.vue')},
     { path: '/social-proof/messages', component: require('../components/socialProof/pages/messages/Messages.vue')},

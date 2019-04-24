@@ -1,6 +1,6 @@
 <template>
     <div class="page shadow-md">
-        <tool-header title="types"></tool-header>
+        <tool-header tool="Social Proof" title="types"></tool-header>
 
         <!--Side bar-->
         <div class="container mx-auto flex mt-24">
@@ -26,9 +26,13 @@
                                    class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="type name"/>
 
+                            <input type="text" v-model="icon"
+                                   class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type icon"/>
+
                             <toggleable-input-field>
                                 <input type="number" v-model="interval_minutes"
-                                       class="outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3"
+                                       class="outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 mb-4"
                                        placeholder="repeats every # minutes"/>
                             </toggleable-input-field>
 
@@ -96,6 +100,7 @@
                 repeatable: false,
                 user_generated: false,
                 name: "",
+                icon: "",
 
                 //
                 types: [],
@@ -113,6 +118,7 @@
             add() {
                 axios.post("https://api.frontier.social/api/eventType", {
                     name: this.name,
+                    icon: this.icon,
                     user_generated: this.user_generated,
                     repeatable: this.repeatable,
                     interval_minutes: this.interval_minutes,
@@ -121,6 +127,7 @@
                     this.types.push({
                         id: response.data.id,
                         name: this.name,
+                        icon: this.icon,
                         user_generated: this.user_generated,
                         repeatable: this.repeatable,
                         interval_minutes: this.interval_minutes,
@@ -128,6 +135,7 @@
                 });
 
                     this.name = "";
+                    this.icon = "";
                     this.user_generated = false;
                     this.repeatable = false;
                     this.interval_minutes = 0;

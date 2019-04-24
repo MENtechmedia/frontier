@@ -7,13 +7,29 @@
                     <img src="/images/frontier.png"/>
                 </div>
 
-                <div class="w-1/3">
+                <div class="w-1/5">
 
                 </div>
 
-                <div class="justify-end w-1/3">
+                <div class="justify-end w-2/5">
                     <router-link class="cursor-pointer" to="/dashboard">
-                        <a class="text-zircon px-6 py-4 font-bold self-end">Test</a>
+                        <a class="text-zircon px-6 font-bold self-end text-uppercase">Sign up</a>
+                    </router-link>
+
+                    <router-link class="cursor-pointer" to="/dashboard">
+                        <a class="text-zircon px-6 font-bold self-end text-uppercase">Reviews</a>
+                    </router-link>
+
+                    <router-link class="cursor-pointer" to="/dashboard">
+                        <a class="text-zircon px-6 font-bold self-end text-uppercase">Features</a>
+                    </router-link>
+
+                    <router-link class="cursor-pointer" to="/dashboard">
+                        <a class="text-zircon px-6 font-bold self-end text-uppercase">Integrations</a>
+                    </router-link>
+
+                    <router-link class="cursor-pointer" to="/dashboard">
+                        <a class="text-zircon px-6 font-bold self-end text-uppercase">Pricing</a>
                     </router-link>
                 </div>
             </div>
@@ -39,11 +55,10 @@
                         <icon-input placeholder="Password" type="password" icon="lock"></icon-input>
 
                         <!--Login button-->
-                        <div class="login__button flex flex-col mb-6">
-                            <router-link class="self-end cursor-pointer" to="/dashboard">
+                        <div class="login__button flex flex-col mb-6 pl-16 ml-2">
+                            <router-link class="self-start cursor-pointer" to="/dashboard">
                                 <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end" type="submit" value="login" >
                             </router-link>
-
                         </div>
 
                     </div>
