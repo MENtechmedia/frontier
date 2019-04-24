@@ -13,7 +13,7 @@ import Vue from 'vue';
 Vue.use(VueRouter);
 
 let routes = [
-    { path: '/login', component: require('../components/login/Login.vue')},
+    { path: '/', component: require('../components/login/Login.vue')},
     { path: '/dashboard', component: require('../components/dashboard/Dashboard.vue')},
     { path: '/social-proof', component: require('../components/socialProof/pages/entry/SocialProof.vue')},
     { path: '/social-proof/types', component: require('../components/socialProof/pages/types/Types.vue')},

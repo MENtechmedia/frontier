@@ -50931,7 +50931,7 @@ var index_esm = {
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/login', component: __webpack_require__(57) }, { path: '/dashboard', component: __webpack_require__(66) }, { path: '/social-proof', component: __webpack_require__(94) }, { path: '/social-proof/types', component: __webpack_require__(110) }, { path: '/social-proof/messages', component: __webpack_require__(119) }, { path: '/social-proof/settings', component: __webpack_require__(122) }];
+var routes = [{ path: '/', component: __webpack_require__(57) }, { path: '/dashboard', component: __webpack_require__(66) }, { path: '/social-proof', component: __webpack_require__(94) }, { path: '/social-proof/types', component: __webpack_require__(110) }, { path: '/social-proof/messages', component: __webpack_require__(119) }, { path: '/social-proof/settings', component: __webpack_require__(122) }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     routes: routes
