@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="531.033" height="590.111" viewBox="0 0 531.033 590.111">
+  <defs>
+    <filter id="Path_6" x="31" y="-6" width="509.033" height="388.111" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_15" data-name="Rectangle 15" width="449" height="199" transform="translate(1091.983 1471.2) rotate(-25)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <filter id="FRONTIER" x="82.017" y="263.555" width="323" height="100" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_3" x="398.017" y="312.555" width="31" height="31" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-2">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_6)">
+        <path id="Path_6-2" data-name="Path 6" d="M0,0H449V199H0Z" transform="translate(1131.98 1147.2) rotate(-25)" fill="none"/>
+      </g>
+    </clipPath>
+    <filter id="FRONTIER-2" x="82.017" y="263.555" width="323" height="100" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_29" data-name="Group 29" transform="translate(-203.967 458.555)">
+    <g id="Symbol_2_1" data-name="Symbol 2 – 1" transform="translate(157 -256)">
+      <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(-1045.017 -1264)" clip-path="url(#clip-path)">
+        <g id="Group_8" data-name="Group 8" transform="translate(1005 435)">
+          <g id="Group_4" data-name="Group 4" transform="translate(58 -86)">
+            <g transform="matrix(1, 0, 0, 1, 28.98, 712.44)" filter="url(#FRONTIER)">
+              <text id="FRONTIER-3" data-name="FRONTIER" transform="translate(91.02 330.56)" fill="#3f337a" font-size="60" font-family="NunitoSans-Black, Nunito Sans" font-weight="800"><tspan x="0" y="0">FRONTIER</tspan></text>
+            </g>
+            <g transform="matrix(1, 0, 0, 1, 28.98, 712.44)" filter="url(#Path_3)">
+              <path id="Path_3-2" data-name="Path 3" d="M6.5,0A6.5,6.5,0,1,1,0,6.5,6.5,6.5,0,0,1,6.5,0Z" transform="translate(407.02 318.56)" fill="#3f337a"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Mask_Group_5" data-name="Mask Group 5" transform="translate(-1045.017 -1160)" clip-path="url(#clip-path-2)">
+        <g id="Group_7" data-name="Group 7" transform="translate(1005 331)">
+          <g id="Group_4-2" data-name="Group 4" transform="translate(58 -86)">
+            <g transform="matrix(1, 0, 0, 1, 28.98, 712.44)" filter="url(#FRONTIER-2)">
+              <text id="FRONTIER-4" data-name="FRONTIER" transform="translate(91.02 330.56)" fill="#f8fbff" font-size="60" font-family="NunitoSans-Black, Nunito Sans" font-weight="800"><tspan x="0" y="0">FRONTIER</tspan></text>
+            </g>
+            <path id="Path_3-3" data-name="Path 3" d="M6.5,0A6.5,6.5,0,1,1,0,6.5,6.5,6.5,0,0,1,6.5,0Z" transform="translate(436 1033)" fill="#f8fbff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="CONVERSION_MADE_SIMPLE" data-name="CONVERSION MADE SIMPLE" transform="translate(298 -99)" fill="#f7d13e" font-size="18" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="0" y="0">CONVERSION MADE SIMPLE</tspan></text>
+  </g>
+</svg>

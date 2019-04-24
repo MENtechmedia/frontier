@@ -53701,7 +53701,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.login-background {\n  background: -webkit-gradient(linear, left top, right bottom, from(#3f337a), to(#97a0fb));\n  background: linear-gradient(to bottom right, #3f337a, #97a0fb);\n  height: 100vh;\n}\n.seperator {\n  height: 100px;\n  width: 1px;\n}\n", ""]);
+exports.push([module.i, "\n.login-background {\n  background: -webkit-gradient(linear, left top, right bottom, from(#3f337a), to(#97a0fb));\n  background: linear-gradient(to bottom right, #3f337a, #97a0fb);\n  height: 100vh;\n}\n.hoi {\n  height: 70vh;\n}\n.seperator {\n  height: 100px;\n  width: 1px;\n}\n", ""]);
 
 // exports
 
@@ -53747,6 +53747,29 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__IconInput_vue__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__IconInput_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__IconInput_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -53948,129 +53971,163 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page shadow-md" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "w-full login-background flex flex-col items-center justify-center"
-      },
-      [
+    _c("div", { staticClass: "w-full login-background" }, [
+      _c("div", { staticClass: "px-16 py-16 flex" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-1/3" }),
+        _vm._v(" "),
         _c(
           "div",
-          { staticClass: "container mx-auto flex flex-row justify-center" },
+          { staticClass: "justify-end w-1/3" },
           [
             _c(
-              "div",
-              { staticClass: "w-1/3 flex flex-col mr-8" },
+              "router-link",
+              { staticClass: "cursor-pointer", attrs: { to: "/dashboard" } },
               [
-                _c("h2", { staticClass: "self-start text-saffron  my-8 " }, [
-                  _vm._v(" Login to your account ")
-                ]),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Your company",
-                    type: "text",
-                    icon: "work"
-                  }
-                }),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Email address",
-                    type: "email",
-                    icon: "person"
-                  }
-                }),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Password",
-                    type: "password",
-                    icon: "lock"
-                  }
-                }),
-                _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "login__button flex flex-col mb-6" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "self-end cursor-pointer",
-                        attrs: { to: "/dashboard" }
-                      },
-                      [
-                        _c("input", {
-                          staticClass:
-                            "bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end",
-                          attrs: { type: "submit", value: "login" }
-                        })
-                      ]
-                    )
-                  ],
-                  1
+                  "a",
+                  { staticClass: "text-zircon px-6 py-4 font-bold self-end" },
+                  [_vm._v("Test")]
                 )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "seperator  bg-snuff mx-10 self-center" }),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "w-1/3 flex flex-col" },
-              [
-                _c(
-                  "h2",
-                  { staticClass: "self-start text-periwinkle-gray my-8" },
-                  [_vm._v(" Register a new account ")]
-                ),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Email address",
-                    type: "email",
-                    icon: "person"
-                  }
-                }),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Your company",
-                    type: "text",
-                    icon: "work"
-                  }
-                }),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Password",
-                    type: "password",
-                    icon: "lock"
-                  }
-                }),
-                _vm._v(" "),
-                _c("icon-input", {
-                  attrs: {
-                    placeholder: "Repeat password",
-                    type: "password",
-                    icon: "lock"
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(0)
-              ],
-              1
+              ]
             )
-          ]
+          ],
+          1
         )
-      ]
-    )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-col items-center justify-center hoi" },
+        [
+          _c(
+            "div",
+            { staticClass: "container mx-auto flex flex-row justify-center" },
+            [
+              _c(
+                "div",
+                { staticClass: "w-1/3 flex flex-col mr-8" },
+                [
+                  _c("h2", { staticClass: "self-start text-saffron  my-8 " }, [
+                    _vm._v(" Login to your account ")
+                  ]),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Your company",
+                      type: "text",
+                      icon: "work"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Email address",
+                      type: "email",
+                      icon: "person"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Password",
+                      type: "password",
+                      icon: "lock"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "login__button flex flex-col mb-6" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "self-end cursor-pointer",
+                          attrs: { to: "/dashboard" }
+                        },
+                        [
+                          _c("input", {
+                            staticClass:
+                              "bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end",
+                            attrs: { type: "submit", value: "login" }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "seperator  bg-snuff mx-10 self-center"
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-1/3 flex flex-col" },
+                [
+                  _c(
+                    "h2",
+                    { staticClass: "self-start text-periwinkle-gray my-8" },
+                    [_vm._v(" Register a new account ")]
+                  ),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Email address",
+                      type: "email",
+                      icon: "person"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Your company",
+                      type: "text",
+                      icon: "work"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Password",
+                      type: "password",
+                      icon: "lock"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("icon-input", {
+                    attrs: {
+                      placeholder: "Repeat password",
+                      type: "password",
+                      icon: "lock"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ],
+                1
+              )
+            ]
+          )
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "justify-start w-1/3" }, [
+      _c("img", { attrs: { src: "/images/frontier.png" } })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
