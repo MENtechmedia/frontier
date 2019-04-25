@@ -5,6 +5,7 @@ window.Vue = require('vue');
 import {store} from './store/store.js';
 import {router} from './routes/web.js';
 
+
 axios.request({
     url: "/oauth/token",
     method: "post",

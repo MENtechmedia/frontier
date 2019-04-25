@@ -81,6 +81,7 @@
         },
 
         mounted() {
+            console.log(' mounted');
             this.all();
         },
 

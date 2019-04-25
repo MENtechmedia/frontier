@@ -4,7 +4,7 @@
         <sidebar-link-group title="email catcher">
 
             <!--Types-->
-            <router-link to="/email-catchers/catchers" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
+            <router-link to="/email-catcher/catchers" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
                 <i class="material-icons text-saffron mr-4">extension</i>
                 <span class="text-london-hue">
                     Email catchers
