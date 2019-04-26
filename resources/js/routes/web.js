@@ -18,6 +18,7 @@ let routes = [
 
     { path: '/email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue')},
     { path: '/email-catcher/catchers', component: require('../components/emailCatcher/pages/catchers/Catchers.vue')},
+    { path: '/email-catcher/themes', component: require('../components/emailCatcher/pages/themes/EmailCatcherTheme.vue')},
 
     { path: '/social-proof', component: require('../components/socialProof/pages/entry/SocialProof.vue')},
     { path: '/social-proof/types', component: require('../components/socialProof/pages/types/Types.vue')},
