@@ -1,5 +1,5 @@
 <template>
-    <div class="input-group color-picker-component">
+    <div class="input-group color-picker-component inline-block">
 <!--        <input type="text"-->
 <!--               class="mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block inline-block"-->
 <!--               title="Color Picker"-->

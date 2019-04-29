@@ -26,62 +26,100 @@
                             <input v-model="name" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="Theme name"/>
 
-                            <p class="text-periwinkle-gray-dark py-3">Submit button color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="submitButtonColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Submit button color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="submitButtonColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Submit button background color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="submitButtonBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Submit button background color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="submitButtonBackgroundColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Close Button Background Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="closeButtonBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Close Button Background Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="closeButtonBackgroundColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Close Button Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="closeButtonColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Close Button Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="closeButtonColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Header Background Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="headerBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Header Background Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="headerBackgroundColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Content Background Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="contentBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Content Background Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="contentBackgroundColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Title Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="titleColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Title Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="titleColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Title Icon Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="titleIconColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Title Icon Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="titleIconColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Subtitle Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="subtitleColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Subtitle Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="subtitleColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Label Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="labelColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Label Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="labelColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Input Label Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="inputLabelColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Input Label Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="inputLabelColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Input Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="inputColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Input Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="inputColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Input Background Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="inputBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Input Background Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="inputBackgroundColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Input Border Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="inputBorderColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Input Border Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="inputBorderColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Input Icon Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="inputIconColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Input Icon Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="inputIconColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Policy Text Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="policyTextColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Policy Text Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="policyTextColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Check Box Border Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="checkBoxBorderColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Check Box Border Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="checkBoxBorderColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Check Mark Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="checkMarkColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Check Mark Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="checkMarkColor"/>
+                            </div>
 
-                            <p class="text-periwinkle-gray-dark py-3">Check Box Background Color</p>
-                            <chrome-picker picker="chrome" :item="colorType" v-model="checkBoxBackgroundColor"/>
+                            <div>
+                                <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Check Box Background Color</p>
+                                <chrome-picker picker="chrome" :item="colorType" v-model="checkBoxBackgroundColor"/>
+                            </div>
 
                             <div class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
                                 Save
