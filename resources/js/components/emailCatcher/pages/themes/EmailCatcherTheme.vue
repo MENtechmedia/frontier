@@ -255,6 +255,27 @@
                     check_box_background_color: this.checkBoxBackgroundColor
                 });
 
+                this.name = null;
+                this.submitButtonColor = null;
+                this.submitButtonBackgroundColor = null;
+                this.closeButtonBackgroundColor = null;
+                this.closeButtonColor = null;
+                this.headerBackgroundColor = null;
+                this.contentBackgroundColor = null;
+                this.titleColor = null;
+                this.titleIconColor = null;
+                this.subtitleColor = null;
+                this.labelColor = null;
+                this.inputLabelColor = null;
+                this.inputColor = null;
+                this.inputBackgroundColor = null;
+                this.inputBorderColor = null;
+                this.inputIconColor = null;
+                this.policyTextColor = null;
+                this.checkBoxBorderColor = null;
+                this.checkMarkColor = null;
+                this.checkBoxBackgroundColor = null;
+
                 this.all();
             },
 

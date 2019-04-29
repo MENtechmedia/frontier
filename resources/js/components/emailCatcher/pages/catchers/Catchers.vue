@@ -21,6 +21,49 @@
                         <div class="w-1/3">
                             <h1 class=" text-minsk font-black mb-10"> Catchers </h1>
 
+                            <input v-model="name" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type name"/>
+
+                            <input v-model="label" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type label"/>
+
+                            <input v-model="title" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type title"/>
+
+                            <input v-model="subtitle" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type subtitle"/>
+
+                            <input v-model="emailField" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type email placeholder"/>
+
+                            <input v-model="buttonField" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type button placeholder"/>
+
+                            <input v-model="cookieText" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type cookie text"/>
+
+                            <input v-model="errorText" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type error text"/>
+
+                            <input v-model="successText" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type success text"/>
+
+                            <input v-model="termsAndConditionsUrl" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type terms and conditions url"/>
+
+                            <input v-model="cookiePolicyUrl" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type policy url"/>
+
+                            <input v-model="intervalTime" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type interval"/>
+
+                            <input v-model="active" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type active"/>
+
+                            <select v-model="emailCatcherThemeId" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="emailCatcherThemeId" >
+                                <option selected="selected" value="default" disabled>Choose email catcher theme</option>
+                                <option v-for="email_catcher_theme in email_catcher_themes" :value="email_catcher_theme.id" > {{ email_catcher_theme.name }}</option>
+                            </select>
 
                             <div class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
                                 Save
@@ -76,18 +119,51 @@
 
         data() {
             return {
+                name: null,
+                label: null,
+                title: null,
+                subtitle: null,
+                emailField: null,
+                buttonField: null,
+                cookieText: null,
+                errorText: null,
+                successText: null,
+                termsAndConditionsUrl: null,
+                cookiePolicyUrl: null,
+                intervalTime: null,
+                active: null,
+                emailCatcherThemeId: null,
                 catchers: null,
+                email_catcher_themes: null,
             }
         },
 
         mounted() {
             this.all();
+            this.getEmailCatcherThemes();
         },
 
         methods: {
 
             add() {
+                axios.post("https://api.frontier.social/api/emailCatcher", {
+                    name: this.name,
+                    label: this.label,
+                    title: this.title,
+                    subtitle: this.subtitle,
+                    email_field: this.emailField,
+                    button_field: this.buttonField,
+                    cookie_text: this.cookieText,
+                    error_text: this.errorText,
+                    success_text: this.successText,
+                    terms_and_conditions_url: this.termsAndConditionsUrl,
+                    cookie_policy_url: this.cookiePolicyUrl,
+                    interval_time: this.intervalTime,
+                    active: this.active,
+                    email_catcher_theme_id: this.emailCatcherThemeId
+                }).then((response) => {
 
+                })
             },
 
             remove(id) {
@@ -99,6 +175,12 @@
                     this.catchers = response.data.data;
                 });
             },
+
+            getEmailCatcherThemes() {
+                axios.get("https://api.frontier.social/api/emailCatcherTheme").then((response) => {
+                    this.email_catcher_themes = response.data.data;
+                });
+            }
         }
 
 
