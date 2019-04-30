@@ -45,7 +45,7 @@
                     </span>
                 </router-link>
 
-                <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
+                <router-link to="/settings" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
                     <i class="material-icons text-saffron mr-4">settings</i>
                     <span class="text-london-hue">
                         Settings

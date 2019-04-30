@@ -48,21 +48,20 @@
                             <input v-model="successText" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="type success text"/>
 
-                            <input v-model="termsAndConditionsUrl" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                            <input v-model="termsAndConditionsUrl" type="url" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="type terms and conditions url"/>
 
-                            <input v-model="cookiePolicyUrl" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                            <input v-model="cookiePolicyUrl" type="url" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="type policy url"/>
 
-                            <input v-model="intervalTime" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
-                                   placeholder="type interval"/>
+                            <input v-model="intervalTime" type="number" min="0" step="1" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+                                   placeholder="type interval (in minutes)"/>
 
-                            <input v-model="active" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
-                                   placeholder="type active"/>
+                            Active <toggle-input class="mb-4" v-model="active"></toggle-input>
 
                             <select v-model="emailCatcherThemeId" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="emailCatcherThemeId" >
                                 <option selected="selected" value="default" disabled>Choose email catcher theme</option>
-                                <option v-for="email_catcher_theme in email_catcher_themes" :value="email_catcher_theme.id" > {{ email_catcher_theme.name }}</option>
+                                <option v-for="(index, email_catcher_theme) in email_catcher_themes" :value="email_catcher_theme.id" > {{ email_catcher_theme.name }}</option>
                             </select>
 
                             <div class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
@@ -103,6 +102,7 @@
     import Sidebar from '../../../ui-components/Sidebar';
     import SidebarLinkGroup from '../../../ui-components/SidebarLinkGroup';
     import ToggleableInputField from '../../../ui-components/inputs/ToggleableInputFields';
+    import ToggleInput from '../../../ui-components/inputs/ToggleInput';
     import AddSignButton from '../../../ui-components/buttons/AddSignButton';
     import EmailCatcherSidebar from '../EmailCatcherSidebar';
 
@@ -113,6 +113,7 @@
             Sidebar,
             SidebarLinkGroup,
             ToggleableInputField,
+            ToggleInput,
             AddSignButton,
             EmailCatcherSidebar,
         },
@@ -131,7 +132,7 @@
                 termsAndConditionsUrl: null,
                 cookiePolicyUrl: null,
                 intervalTime: null,
-                active: null,
+                active: false,
                 emailCatcherThemeId: null,
                 catchers: null,
                 email_catcher_themes: null,
@@ -163,11 +164,35 @@
                     email_catcher_theme_id: this.emailCatcherThemeId
                 }).then((response) => {
 
-                })
+                });
+
+                this.name = null;
+                this.label = null;
+                this.subtitle = null;
+                this.email_field = null;
+                this.button_field = null;
+                this.cookie_text = null;
+                this.error_text = null;
+                this.success_text = null;
+                this.terms_and_conditions_url = null;
+                this.cookie_policy_url = null;
+                this.interval_time = null;
+                this.active = false;
+                this.email_catcher_theme_id = null;
+
+                this.all();
             },
 
             remove(id) {
+                axios.delete("https://api.frontier.social/api/emailCatcher/" + id).then((response) => {
+                    let removeIndex = this.catchers.map(function(catcher) {
+                        return catcher.id;
+                    }).indexOf(id);
 
+                    ~removeIndex && this.catchers.splice(removeIndex, 1);
+                }).catch((error) => {
+                    console.log(error);
+                });
             },
 
             all() {

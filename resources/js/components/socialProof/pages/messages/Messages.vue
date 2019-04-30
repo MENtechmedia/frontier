@@ -1,6 +1,6 @@
 <template>
     <div class="page shadow-md">
-        <tool-header tool="Social Proof" title="types"></tool-header>
+        <tool-header tool="Social Proof" title="messages"></tool-header>
 
         <!--Side bar-->
         <div class="container mx-auto flex mt-24">
@@ -127,7 +127,6 @@
 
             getTypes() {
                 axios.get("https://api.frontier.social/api/eventType").then((response) => {
-                    console.log(response);
                     this.types = response.data.data;
                 });
             }

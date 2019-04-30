@@ -14,10 +14,6 @@
 
         <link href="/css/app.css" type="text/css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <style>
-
-        </style>
     </head>
     <body class="bg-zircon">
         <div id="app">

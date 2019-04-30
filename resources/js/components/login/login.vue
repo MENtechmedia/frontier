@@ -57,7 +57,7 @@
                         <!--Login button-->
                         <div class="login__button flex flex-col mb-6 pl-16 ml-2">
                             <router-link class="self-start cursor-pointer" to="/dashboard">
-                                <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end" type="submit" value="login" >
+                                <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end cursor-pointer" type="submit" value="login" >
                             </router-link>
                         </div>
 
@@ -85,7 +85,7 @@
                         <icon-input placeholder="Repeat password" type="password" icon="lock"></icon-input>
 
                         <div class="login__button flex flex-col mb-6">
-                            <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end" type="submit" value="register" >
+                            <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end cursor-pointer" type="submit" value="register" >
                         </div>
 
                     </div>
