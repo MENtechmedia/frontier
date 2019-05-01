@@ -20,7 +20,7 @@
             </router-link>
 
             <!--Settings-->
-            <router-link to="/social-proof/settings" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
+            <router-link to="/email-catcher/subscriptions" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
                 <i class="material-icons text-saffron mr-4">local_library</i>
                 <span class="text-london-hue">
                     Email subscriptions
