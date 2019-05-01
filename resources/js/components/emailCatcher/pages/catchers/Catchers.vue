@@ -163,7 +163,15 @@
                     active: this.active,
                     email_catcher_theme_id: this.emailCatcherThemeId
                 }).then((response) => {
-
+                    Vue.toasted.success('Email catcher was inserted!', {
+                        action : {
+                            text : 'Cancel',
+                            onClick : (e, toastObject) => {
+                                toastObject.goAway(0);
+                            }
+                        },
+                        icon: 'check',
+                    });
                 });
 
                 this.name = null;
@@ -184,14 +192,24 @@
             },
 
             remove(id) {
-                axios.delete("https://api.frontier.social/api/emailCatcher/" + id).then((response) => {
-                    let removeIndex = this.catchers.map(function(catcher) {
-                        return catcher.id;
-                    }).indexOf(id);
+                Vue.swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        axios.delete("https://api.frontier.social/api/emailCatcher/" + id).then((response) => {
+                            let removeIndex = this.catchers.map(function(catcher) {
+                                return catcher.id;
+                            }).indexOf(id);
 
-                    ~removeIndex && this.catchers.splice(removeIndex, 1);
-                }).catch((error) => {
-                    console.log(error);
+                            ~removeIndex && this.catchers.splice(removeIndex, 1);
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                    }
                 });
             },
 

@@ -102,6 +102,16 @@
                 axios.post("https://api.frontier.social/api/event", {
                     message: this.message,
                     event_type_id: this.event_type_id,
+                }).then((response) => {
+                    Vue.toasted.success('Message was inserted!', {
+                        action : {
+                            text : 'Cancel',
+                            onClick : (e, toastObject) => {
+                                toastObject.goAway(0);
+                            }
+                        },
+                        icon: 'check',
+                    });
                 });
 
                 this.all();
@@ -114,14 +124,24 @@
             },
 
             remove(id) {
-                axios.delete("https://api.frontier.social/api/event/" + id).then((response) => {
-                    let removeIndex = this.messages.map(function(message) {
-                        return message.id;
-                    }).indexOf(id);
+                Vue.swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if(result.value) {
+                        axios.delete("https://api.frontier.social/api/event/" + id).then((response) => {
+                            let removeIndex = this.messages.map(function(message) {
+                                return message.id;
+                            }).indexOf(id);
 
-                    ~removeIndex && this.messages.splice(removeIndex, 1);
-                }).catch((error) => {
-                    console.log(error);
+                            ~removeIndex && this.messages.splice(removeIndex, 1);
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                    }
                 });
             },
 

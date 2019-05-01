@@ -38,4 +38,15 @@ const app = new Vue({
     store
 });
 
+import Toasted from 'vue-toasted';
+import VueSweetalert2 from 'vue-sweetalert2';
+
+Vue.use(Toasted);
+
+const sweetalertOptions = {
+    confirmButtonColor: '#4CAE51',
+    cancelButtonColor: '#ff7674'
+};
+
+Vue.use(VueSweetalert2, sweetalertOptions);
 

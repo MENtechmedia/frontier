@@ -26,9 +26,9 @@
                             <input v-model="name" type="text" class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                                    placeholder="Theme name"/>
 
-                            <div>
+                            <div class="relative">
                                 <p class="text-periwinkle-gray-dark py-3 inline-block w-5/6">Submit button color</p>
-                                <chrome-picker picker="chrome" :item="colorType" v-model="submitButtonColor"/>
+                                <chrome-picker class="absolute" picker="chrome" :item="colorType" v-model="submitButtonColor"/>
                             </div>
 
                             <div>
@@ -253,6 +253,16 @@
                     check_box_border_color: this.checkBoxBorderColor,
                     check_mark_color: this.checkMarkColor,
                     check_box_background_color: this.checkBoxBackgroundColor
+                }).then((response) => {
+                    Vue.toasted.success('Email catcher theme was inserted!', {
+                        action : {
+                            text : 'Cancel',
+                            onClick : (e, toastObject) => {
+                                toastObject.goAway(0);
+                            }
+                        },
+                        icon: 'check',
+                    });
                 });
 
                 this.name = null;
@@ -280,14 +290,24 @@
             },
 
             remove(id) {
-                axios.delete("https://api.frontier.social/api/emailCatcherTheme/" + id).then((response) => {
-                    let removeIndex = this.themes.map(function(theme) {
-                        return theme.id;
-                    }).indexOf(id);
+                Vue.swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        axios.delete("https://api.frontier.social/api/emailCatcherTheme/" + id).then((response) => {
+                            let removeIndex = this.themes.map(function(theme) {
+                                return theme.id;
+                            }).indexOf(id);
 
-                    ~removeIndex && this.themes.splice(removeIndex, 1);
-                }).catch((error) => {
-                    console.log(error);
+                            ~removeIndex && this.themes.splice(removeIndex, 1);
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                    }
                 });
             },
 

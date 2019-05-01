@@ -15,6 +15,7 @@ Vue.use(VueRouter);
 let routes = [
     { path: '/', component: require('../components/login/Login.vue')},
     { path: '/dashboard', component: require('../components/dashboard/Dashboard.vue')},
+    { path: '/settings', component: require('../components/dashboard/settings/Settings.vue')},
 
     { path: '/email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue')},
     { path: '/email-catcher/catchers', component: require('../components/emailCatcher/pages/catchers/Catchers.vue')},

@@ -124,31 +124,43 @@
                     interval_minutes: this.interval_minutes,
                     social_proof_theme_id: this.social_proof_theme_id
                 }).then((response) => {
-                    this.types.push({
-                        id: response.data.id,
-                        name: this.name,
-                        icon: this.icon,
-                        user_generated: this.user_generated,
-                        repeatable: this.repeatable,
-                        interval_minutes: this.interval_minutes,
-                        social_proof_theme_id: this.social_proof_theme_id,
+                    Vue.toasted.success('Type was inserted!', {
+                        action : {
+                            text : 'Cancel',
+                            onClick : (e, toastObject) => {
+                                toastObject.goAway(0);
+                            }
+                        },
+                        icon: 'check',
+                    });
                 });
 
-                    this.name = "";
-                    this.icon = "";
-                    this.user_generated = false;
-                    this.repeatable = false;
-                    this.interval_minutes = 0;
-                });
+                this.name = "";
+                this.icon = "";
+                this.user_generated = false;
+                this.repeatable = false;
+                this.interval_minutes = 0;
+
+                this.all();
             },
 
             remove(id) {
-                axios.delete("https://api.frontier.social/api/eventType/" + id).then((response) => {
-                    let removeIndex = this.types.map(function(type) {
-                        return type.id;
-                    }).indexOf(id);
+                Vue.swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        axios.delete("https://api.frontier.social/api/eventType/" + id).then((response) => {
+                            let removeIndex = this.types.map(function(type) {
+                                return type.id;
+                            }).indexOf(id);
 
-                    ~removeIndex && this.types.splice(removeIndex, 1);
+                            ~removeIndex && this.types.splice(removeIndex, 1);
+                        });
+                    }
                 });
             },
 
