@@ -80,7 +80,7 @@
                     if(validationRule.includes('min:')) {
                         let minRule = validationRule.split(":");
                         if(newValue == "" || newValue.length < minRule[1]) {
-                            this.errors.push('Field required a minimum length of ' + minRule[1]  + '!');
+                            this.errors.push('Field requires a minimum length of ' + minRule[1]  + '!');
                         }
                     }
 

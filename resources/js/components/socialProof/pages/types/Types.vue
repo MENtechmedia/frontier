@@ -54,8 +54,8 @@
                             <div v-if="noErrors" class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
                                 Save
                             </div>
-                            <div v-else class="bg-grey-dark text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4">
-
+                            <div v-else class="bg-grey-dark text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4 cursor-not-allowed">
+                                Save
                             </div>
                         </div>
 
@@ -110,8 +110,13 @@
 
         watch: {
           errors: {
-              handler: function(val, oldVal) {
-                console.log('Testerdetest');
+              handler: function(newErrors, oldErrors) {
+                  if (!newErrors.nameError) {
+                      this.noErrors = true;
+                      return;
+                  }
+
+                  this.noErrors = false;
               },
               deep: true
           }
