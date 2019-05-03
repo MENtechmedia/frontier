@@ -22,9 +22,19 @@
                             <h1 class=" text-minsk font-black mb-10"> Types </h1>
                             <p class="text-london-hue font-bold mb-6"> Add different types for your social proof
                                 messages.</p>
-                            <input type="text" v-model="name"
-                                   class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
-                                   placeholder="type name"/>
+
+                            <div class="mb-6">
+                                <custom-input type="text"
+                                              v-model="name"
+                                              @validated="value => errors.nameError = value"
+                                              :input-error="errors.nameError"
+                                              placeholder="type name"
+                                              validation-rules="required|min:3|max:3"></custom-input>
+                            </div>
+
+<!--                            <input type="text" v-model="name"-->
+<!--                                   class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"-->
+<!--                                   placeholder="type name"/>-->
 
                             <input type="text" v-model="icon"
                                    class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
@@ -41,8 +51,11 @@
                                 <option v-for="social_proof_theme in social_proof_themes" :value="social_proof_theme.id" > {{ social_proof_theme.name }}</option>
                             </select>
 
-                            <div class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
+                            <div v-if="noErrors" class="bg-saffron text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4" @click="add()">
                                 Save
+                            </div>
+                            <div v-else class="bg-grey-dark text-white px-4 py-3 rounded shadow-md inline-block cursor-pointer mt-4">
+
                             </div>
                         </div>
 
@@ -81,6 +94,7 @@
     import ToggleableInputField from '../../../ui-components/inputs/ToggleableInputFields';
     import AddSignButton from '../../../ui-components/buttons/AddSignButton';
     import SocialProofSidebar from '../SocialProofSidebar';
+    import CustomInput from '../../../validation/CustomInput';
 
     export default {
         components: {
@@ -91,10 +105,25 @@
             ToggleableInputField,
             AddSignButton,
             SocialProofSidebar,
+            CustomInput,
+        },
+
+        watch: {
+          errors: {
+              handler: function(val, oldVal) {
+                console.log('Testerdetest');
+              },
+              deep: true
+          }
         },
 
         data() {
             return {
+                noErrors: false,
+                errors: {
+                    nameError: true,
+                },
+
                 social_proof_themes: [],
                 interval_minutes: 0,
                 repeatable: false,
@@ -116,6 +145,8 @@
         methods: {
 
             add() {
+
+
                 axios.post("https://api.frontier.social/api/eventType", {
                     name: this.name,
                     icon: this.icon,
@@ -174,7 +205,7 @@
                 axios.get("https://api.frontier.social/api/socialProofTheme").then((response) => {
                     this.social_proof_themes = response.data.data;
                 });
-            }
+            },
         }
 
 
