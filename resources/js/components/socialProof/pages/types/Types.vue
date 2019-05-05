@@ -36,9 +36,14 @@
 <!--                                   class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"-->
 <!--                                   placeholder="type name"/>-->
 
-                            <input type="text" v-model="icon"
-                                   class="w-full mb-6 outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
-                                   placeholder="type icon"/>
+                            <div class="mb-6">
+                                <custom-input type="text"
+                                              v-model="icon"
+                                              @validated="value => errors.iconError = value"
+                                              :input-error="errors.iconError"
+                                              placeholder="type icon"
+                                              validation-rules="required"></custom-input>
+                            </div>
 
                             <toggleable-input-field>
                                 <input type="number" v-model="interval_minutes"
@@ -111,12 +116,11 @@
         watch: {
           errors: {
               handler: function(newErrors, oldErrors) {
-                  if (!newErrors.nameError) {
-                      this.noErrors = true;
+                  if(Object.values(newErrors).includes(true)) {
+                      this.noErrors = false;
                       return;
                   }
-
-                  this.noErrors = false;
+                  this.noErrors = true;
               },
               deep: true
           }
@@ -127,6 +131,7 @@
                 noErrors: false,
                 errors: {
                     nameError: true,
+                    iconError: true,
                 },
 
                 social_proof_themes: [],

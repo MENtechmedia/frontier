@@ -18,7 +18,7 @@
                   @input="update">
         </textarea>
 
-        <div class="absolute bg-red-dark text-white">
+        <div class="absolute bg-red-dark text-white rounded mt-2">
             <p class="py-2 px-2" v-for="error in errors">
                 {{ error }}
             </p>

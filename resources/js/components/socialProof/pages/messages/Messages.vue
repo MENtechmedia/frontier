@@ -29,7 +29,7 @@
                                        <!--placeholder="icon"/>-->
 
                                 <select v-model="event_type_id" class="cursor-pointer py-3 px-5 shadow-md rounded block" name="type_id" >
-                                    <option selected="selected" value="default" disabled>Maak een keuze</option>
+                                    <option selected="selected" value="default" disabled>Choose a type</option>
                                     <option v-for="type in types" :value="type.id" > {{ type.name }}</option>
                                 </select>
 
