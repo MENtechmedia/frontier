@@ -4,6 +4,7 @@
         <input v-if="type === 'text' || type === 'number'"
                 :type="type"
                 class="w-full outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
+               :class="errors.length > 0 ? 'border border-red' : ''"
                :placeholder="placeholder"
                :value="value"
                @blur="hideErrors"
