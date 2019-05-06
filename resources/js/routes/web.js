@@ -19,6 +19,8 @@ let routes = [
     { path: '/dashboard', name: 'dashboard', component: require('../components/dashboard/Dashboard.vue'), meta: { middleware: auth}},
     { path: '/settings', name: 'settings', component: require('../components/dashboard/settings/Settings.vue'), meta: { middleware: auth }},
 
+    { path: '/subscription', name: 'subscription', component: require('../components/dashboard/subscription/Subscription.vue'), meta: { middleware: auth}},
+
     { path: '/email-catcher', name: 'email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue'), meta: { middleware: auth }},
     { path: '/email-catcher/catchers', name: 'email-catcher-overview', component: require('../components/emailCatcher/pages/catchers/Catchers.vue'), meta: { middleware: auth }},
     { path: '/email-catcher/themes', name: 'email-catcher-themes', component: require('../components/emailCatcher/pages/themes/EmailCatcherTheme.vue'), meta: { middleware: auth }},

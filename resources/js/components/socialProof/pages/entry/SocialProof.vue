@@ -12,7 +12,28 @@
 
             <!-- Content goes here -->
             <div class="w-4/5">
-                <content-section></content-section>
+                <content-section>
+                    <div>
+                        <div class="flex">
+
+
+                            <div class="w-full">
+                                <h1 class=" text-minsk font-black mb-10"> Social Proof </h1>
+
+                                <p class="mb-4">
+                                    Social Proof is a technique to let visitors of your website know what's up. In Frontier, we have implemented a text message style of
+                                    of social proof. You can enter messages that will be displayed to the visitors. You can choose the interval in which these message are
+                                    shown, and additionally you can select if this message should be repeated in stead of shown only once.
+                                </p>
+
+                                <p>
+                                    Feel free to let other people know that a person bought the newest choose, or decided that being subscribed to your newsletter was a
+                                    nice idea. You can insert dynamic message with our API integration.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </content-section>
             </div>
 
         </div>

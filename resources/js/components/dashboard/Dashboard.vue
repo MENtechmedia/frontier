@@ -38,7 +38,7 @@
 
                 <p class="uppercase font-bold text-snuff mt-6 mb-4"> Settings</p>
 
-                <router-link to="/social-proof" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
+                <router-link to="/subscription" class="hover:pl-5 transition-normal-in-out-quad no-underline font-bold flex items-center mb-2">
                     <i class="material-icons text-saffron mr-4">credit_card</i>
                     <span class="text-london-hue">
                         Subscription
