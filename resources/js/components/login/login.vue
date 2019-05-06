@@ -73,16 +73,32 @@
                         <h2 class="self-start text-periwinkle-gray my-8"> Register a new account </h2>
 
                         <!-- Email address placeholder -->
-                        <icon-input placeholder="Email address" type="email" icon="person"></icon-input>
+                        <icon-input v-model="company_email" placeholder="Email address" type="email" icon="person"></icon-input>
 
                         <!-- Company placeholder -->
-                        <icon-input placeholder="Your company" type="text" icon="work"></icon-input>
+                        <icon-input v-model="company_name" placeholder="Your company" type="text" icon="work"></icon-input>
+
+                        <div class="login__input flex mb-6" v-if="company_name != ''">
+                            <i class="text-saffron material-icons my-4 mx-6 shadow-lg">
+
+                            </i>
+                            <div class="w-full text-white px-6 py-2 appearance-none rounded focus:outline-none  shadow-md text-xs ">
+                                {{ company_name | strippedLowerCase }}
+
+                                <span v-if="existing_website != ''" class="text-red">
+                                     already exists!
+                                </span>
+                                <span v-else class="text-green">
+                                    is available!
+                                </span>
+                            </div>
+                        </div>
 
                         <!-- Password placeholder -->
-                        <icon-input placeholder="Password" type="password" icon="lock"></icon-input>
+                        <icon-input v-model="password" placeholder="Password" type="password" icon="lock"></icon-input>
 
                         <!-- repeat password placeholder-->
-                        <icon-input placeholder="Repeat password" type="password" icon="lock"></icon-input>
+                        <icon-input v-model="password_repeat" placeholder="Repeat password" type="password" icon="lock"></icon-input>
 
                         <div class="login__button flex flex-col mb-6">
                             <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end cursor-pointer" type="submit" value="register" >
@@ -124,6 +140,38 @@
     export default {
         components: {
             'icon-input': IconInput
+        },
+
+        watch: {
+            company_name: function (value) {
+                let strippedName = this.$options.filters.strippedLowerCase(value);
+
+                if(strippedName.length >= 5) {
+                    axios.get("https://api.frontier.social/api/website/byName/" + value).then((response) => {
+                        if(response.data != [])
+                            this.existing_website = response.data;
+                    });
+                } else {
+                    this.existing_website = '';
+                }
+            }
+        },
+
+        filters: {
+            strippedLowerCase: function (value) {
+                if (!value) return '';
+                return value.replace(/[^a-zA-Z ]/g, "").replace(/\s+/g, '').toLowerCase();
+            }
+        },
+
+        data() {
+            return {
+                existing_website: '',
+                company_email: '',
+                company_name: '',
+                password: '',
+                password_repeat: ''
+            }
         }
 
     }

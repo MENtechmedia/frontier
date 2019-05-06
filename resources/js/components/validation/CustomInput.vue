@@ -2,7 +2,7 @@
     <div>
 
         <input v-if="type === 'text' || type === 'number'"
-                type="type"
+                :type="type"
                 class="w-full outline-none text-periwinkle-gray-dark font-light bg-white shadow-md rounded px-4 py-3 block"
                :placeholder="placeholder"
                :value="value"
