@@ -1,5 +1,5 @@
 <template>
-    <router-link class="focus:outline-none" tag="button" to="/login">
+    <div class="focus:outline-none" tag="button" @click="logout">
         <div class="flex items-center">
             <div style="width: 25px; height: 25px;"
                  class=" flex items-center justify-center rounded-full inline-block bg-white">
@@ -9,11 +9,16 @@
             </div>
             <p class="inline-block ml-3 text-white"> logout </p>
         </div>
-    </router-link>
+    </div>
 </template>
 
 <script>
     export default {
-
+        methods: {
+            logout() {
+                localStorage.removeItem('jwt');
+                window.router.push({ name: 'login' });
+            }
+        }
     }
 </script>

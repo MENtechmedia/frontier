@@ -56,9 +56,9 @@
 
                         <!--Login button-->
                         <div class="login__button flex flex-col mb-6 pl-16 ml-2">
-                            <router-link class="self-start cursor-pointer" to="/dashboard">
+                            <div class="self-start cursor-pointer" @click="login">
                                 <input class="bg-london-hue text-zircon px-6 py-4 rounded shadow-md font-bold self-end cursor-pointer" type="submit" value="login" >
-                            </router-link>
+                            </div>
                         </div>
 
                     </div>
@@ -86,7 +86,7 @@
                                 {{ company_name | strippedLowerCase }}
 
                                 <span v-if="existing_website != ''" class="text-red">
-                                     already exists!
+                                    already exists!
                                 </span>
                                 <span v-else class="text-green">
                                     is available!
@@ -171,6 +171,13 @@
                 company_name: '',
                 password: '',
                 password_repeat: ''
+            }
+        },
+
+        methods: {
+            login() {
+                localStorage.setItem('jwt', 'test');
+                window.router.push('dashboard');
             }
         }
 

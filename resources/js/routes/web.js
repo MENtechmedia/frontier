@@ -10,28 +10,70 @@
 import VueRouter from "vue-router";
 import Vue from 'vue';
 
+import auth from '../middleware/auth';
+
 Vue.use(VueRouter);
 
 let routes = [
-    { path: '/', component: require('../components/login/Login.vue')},
-    { path: '/dashboard', component: require('../components/dashboard/Dashboard.vue')},
-    { path: '/settings', component: require('../components/dashboard/settings/Settings.vue')},
+    { path: '/', name: 'login', component: require('../components/login/Login.vue')},
+    { path: '/dashboard', name: 'dashboard', component: require('../components/dashboard/Dashboard.vue'), meta: { middleware: auth}},
+    { path: '/settings', name: 'settings', component: require('../components/dashboard/settings/Settings.vue'), meta: { middleware: auth }},
 
-    { path: '/email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue')},
-    { path: '/email-catcher/catchers', component: require('../components/emailCatcher/pages/catchers/Catchers.vue')},
-    { path: '/email-catcher/themes', component: require('../components/emailCatcher/pages/themes/EmailCatcherTheme.vue')},
-    { path: '/email-catcher/subscriptions', component: require('../components/emailCatcher/pages/subscriptions/CatcherSubscriptions.vue')},
+    { path: '/email-catcher', name: 'email-catcher', component: require('../components/emailCatcher/pages/entry/EmailCatcher.vue'), meta: { middleware: auth }},
+    { path: '/email-catcher/catchers', name: 'email-catcher-overview', component: require('../components/emailCatcher/pages/catchers/Catchers.vue'), meta: { middleware: auth }},
+    { path: '/email-catcher/themes', name: 'email-catcher-themes', component: require('../components/emailCatcher/pages/themes/EmailCatcherTheme.vue'), meta: { middleware: auth }},
+    { path: '/email-catcher/subscriptions', name: 'email-catcher-subscriptions', component: require('../components/emailCatcher/pages/subscriptions/CatcherSubscriptions.vue'), meta: { middleware: auth }},
 
-    { path: '/social-proof', component: require('../components/socialProof/pages/entry/SocialProof.vue')},
-    { path: '/social-proof/types', component: require('../components/socialProof/pages/types/Types.vue')},
-    { path: '/social-proof/messages', component: require('../components/socialProof/pages/messages/Messages.vue')},
-    { path: '/social-proof/settings', component: require('../components/socialProof/pages/settings/Settings.vue')},
+    { path: '/social-proof', name: 'social-proof', component: require('../components/socialProof/pages/entry/SocialProof.vue'), meta: { middleware: auth }},
+    { path: '/social-proof/types', name: 'social-proof-types', component: require('../components/socialProof/pages/types/Types.vue'), meta: { middleware: auth }},
+    { path: '/social-proof/messages', name: 'social-proof-messages', component: require('../components/socialProof/pages/messages/Messages.vue'), meta: { middleware: auth }},
+    { path: '/social-proof/settings', name: 'social-proof-settings', component: require('../components/socialProof/pages/settings/Settings.vue'), meta: { middleware: auth }},
 ];
 
 export const router = new VueRouter({
     routes
 });
 
+// Creates a `nextMiddleware()` function which not only
+// runs the default `next()` callback but also triggers
+// the subsequent Middleware function.
+function nextFactory(context, middleware, index) {
+    const subsequentMiddleware = middleware[index];
+    // If no subsequent Middleware exists,
+    // the default `next()` callback is returned.
+    if (!subsequentMiddleware) return context.next;
+
+    return (...parameters) => {
+        // Run the default Vue Router `next()` callback first.
+        context.next(...parameters);
+        // Than run the subsequent Middleware with a new
+        // `nextMiddleware()` callback.
+        const nextMiddleware = nextFactory(context, middleware, index + 1);
+        subsequentMiddleware({ ...context, next: nextMiddleware });
+    };
+}
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.middleware) {
+        const middleware = Array.isArray(to.meta.middleware)
+            ? to.meta.middleware
+            : [to.meta.middleware];
+
+        const context = {
+            from,
+            next,
+            router,
+            to,
+        };
+        const nextMiddleware = nextFactory(context, middleware, 1);
+
+        return middleware[0]({ ...context, next: nextMiddleware });
+    }
+
+    return next();
+});
+
+window.router = router;
 
 
 
