@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/script-generator', function () {
+    return view('script-generator');
+});
