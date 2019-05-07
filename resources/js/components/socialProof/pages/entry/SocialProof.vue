@@ -27,7 +27,7 @@
                                 </p>
 
                                 <p>
-                                    Feel free to let other people know that a person bought the newest choose, or decided that being subscribed to your newsletter was a
+                                    Feel free to let other people know that a person bought the newest shoes, or decided that being subscribed to your newsletter was a
                                     nice idea. You can insert dynamic message with our API integration.
                                 </p>
                             </div>

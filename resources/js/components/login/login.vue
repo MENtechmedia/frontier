@@ -177,7 +177,9 @@
         methods: {
             login() {
                 localStorage.setItem('jwt', 'test');
+
                 window.router.push('dashboard');
+
             }
         }
 
