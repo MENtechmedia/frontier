@@ -39,15 +39,13 @@ document.body.appendChild(bindingDiv);
 |
 */
 
-import socialWrapper from './components/social-proof/wrapper.vue';
+import componentWrapper from './components/componentWrapper.vue';
 
 
 /* setup Vue*/
 const frontier = new Vue({
     el: '#frontier',
     render(createElement) {
-        return createElement(socialWrapper, {}, {});
+        return createElement(componentWrapper, {}, {});
     },
 });
-
-
