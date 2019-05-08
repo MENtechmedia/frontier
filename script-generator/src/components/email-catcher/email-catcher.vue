@@ -64,7 +64,7 @@
 
                     <div @click="checked = !checked"
                          class="cursor-pointer catcher__checkbox border-blue-grey border-solid border-2 rounded px-1">
-                        <i v-if="checked" class="catcher__checkbox_icon text-jade material-icons text-green relative">
+                        <i v-if="checked" class="catcher__checkbox_icon text-jade material-icons text-green relative"   >
                             check
                         </i>
                     </div>
@@ -148,6 +148,9 @@
     }
 </style>
 <script>
+    import axios from 'axios';
+    import api from '../../api.js';
+
     export default {
         props: {
             display: null,
@@ -224,7 +227,16 @@
             },
 
             storeSubscription() {
+                axios.post(api.base + 'emailSubscription', {
+                    email_catcher_id: 1,
+                    name: 'ADD LATER',
+                    email_address: this.emailSubscriber.email_address,
+                    opt_in: true,
+                    opt_in_type: 'Checkbox',
+                    terminology: 'By clicking the checkbox you give permission to keep... ADD LATER',
+                }).then(() => {
 
+                });
             },
 
             notifyUser() {
