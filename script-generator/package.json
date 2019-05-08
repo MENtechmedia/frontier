@@ -4,7 +4,7 @@
   "description": "marketingtool platform",
   "main": "src/app.js",
   "scripts": {
-    "build": "postcss -o src/tailwind.css src/assets/css/* && webpack",
+    "build": "postcss -o src/app.css src/assets/css/* && webpack",
     "watch": "postcss -o src/tailwind.css src/assets/css/* && webpack --watch --development"
   },
   "author": "MEN Technology & Media",
@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "css-loader": "^1.0.0",
+    "material-design-icons": "^3.0.1",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17",

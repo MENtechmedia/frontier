@@ -24,6 +24,7 @@
   "dependencies": {
     "collect.js": "^4.12.2",
     "laravel-mix-tailwind": "^0.1.0",
+    "material-design-icons": "^3.0.1",
     "tailwindcss": "^0.6.5",
     "tailwindcss-transition": "^1.0.5",
     "vue-color": "^2.7.0",

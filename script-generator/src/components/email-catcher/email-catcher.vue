@@ -1,12 +1,12 @@
 <template>
-    <div
+    <div v-show="visible"
          class="catcher__overlay fixed pin-l pin-t w-full h-full z-2000 flex justify-center items-center">
 
         <div class="catcher__container shadow rounded overflow-hidden bg-grey-lightest relative">
 
             <div @click="close()"
-                 class="catcher__close_button absolute rounded-full mt-6 mr-6 pin-r pin-t bg-blue cursor-pointer">
-                <i class="material-icons text-white text-xs">
+                 class="catcher__close_button absolute rounded-full mt-6 mr-6 pin-r pin-t bg-saffron cursor-pointer">
+                <i class="material-icons text-white text-xs py-1">
                     close
                 </i>
             </div>
@@ -64,7 +64,7 @@
 
                     <div @click="checked = !checked"
                          class="cursor-pointer catcher__checkbox border-blue-grey border-solid border-2 rounded px-1">
-                        <i v-if="checked" class="catcher__checkbox_icon text-jade material-icons text-green">
+                        <i v-if="checked" class="catcher__checkbox_icon text-jade material-icons text-green relative">
                             check
                         </i>
                     </div>
@@ -90,7 +90,7 @@
 </template>
 <style lang="scss">
     .catcher__overlay {
-        background: rgba(0, 0, 0, .5);
+        background: rgba(0, 0, 0, .6);
     }
     .catcher__annotation {
         font-size: 0.65rem;
