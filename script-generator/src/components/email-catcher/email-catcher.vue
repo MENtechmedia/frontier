@@ -1,8 +1,8 @@
 <template>
-    <div v-show="visible"
+    <div
          class="catcher__overlay fixed pin-l pin-t w-full h-full z-2000 flex justify-center items-center">
 
-        <div class="catcher__container shadow rounded overflow-hidden bg-light-grey relative">
+        <div class="catcher__container shadow rounded overflow-hidden bg-grey-lightest relative">
 
             <div @click="close()"
                  class="catcher__close_button absolute rounded-full mt-6 mr-6 pin-r pin-t bg-blue cursor-pointer">
@@ -51,7 +51,7 @@
                     <div class="catcher__input_container w-full sm:w-1/2 md:w-1/2 lg:w-1/2 sm:pr-2 md:pr-2 lg:pr-2">
                         <div class="catcher__input flex py-3 pl-4 outline-none">
                             <button @click.prevent="checkIfCookieConfirmed();" id="preRegisterEvent"
-                                    class="outline-none catcher__subscribe_button text-xs float-right px-10 py-3 mt-2 rounded shadow catcher__transition bg-light-green text-white">
+                                    class="outline-none catcher__subscribe_button text-xs float-right px-10 py-3 mt-2 rounded shadow catcher__transition bg-minsk text-white">
                                 {{ signup }}
                             </button>
                         </div>

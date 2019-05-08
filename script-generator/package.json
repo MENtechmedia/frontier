@@ -4,8 +4,8 @@
   "description": "marketingtool platform",
   "main": "src/app.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch --development"
+    "build": "postcss -o src/tailwind.css src/assets/css/* && webpack",
+    "watch": "postcss -o src/tailwind.css src/assets/css/* && webpack --watch --development"
   },
   "author": "MEN Technology & Media",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "webpack": "^4.17.1"
   },
   "devDependencies": {
+    "tailwindcss": "^0.7.4",
     "webpack-cli": "^3.1.0"
   }
 }

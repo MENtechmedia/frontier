@@ -12,6 +12,8 @@
 import Vue from 'vue';
 import axios from 'axios';
 
+import './tailwind.css';
+
 /*
 |--------------------------------------------------------------------------
 | Binding div
