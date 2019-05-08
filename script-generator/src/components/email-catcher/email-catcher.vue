@@ -180,7 +180,7 @@
             if (this.display)
                 document.addEventListener("mouseleave", this.showOnPageLeave, true);
             // show e-mailcatcher when the user moves its mouse from the page.
-            if(($(document).width() < 768) && this.display) {
+            if((document.width < 768) && this.display) {
                 setTimeout(() => {
                     this.visible = true;
                     this.updateLastPopUpDate();
@@ -198,15 +198,17 @@
         },
         methods: {
             showOnPageLeave(e) {
-                if (e.pageY - $(window).scrollTop() <= 1) {
+                if (e.pageY - window.scrollY <= 1) {
                     this.visible = true;
                     this.updateLastPopUpDate();
                 }
             },
+
             close() {
                 document.removeEventListener("mouseleave", this.showOnPageLeave, true);
                 this.visible = false;
             },
+
             checkIfCookieConfirmed() {
                 if (this.checked) {
                     document.removeEventListener("mouseleave", this.showOnPageLeave, true);
@@ -216,16 +218,15 @@
                     this.showMessage = true;
                 }
             },
+
             updateLastPopUpDate() {
-                axios.put('/emailCatchers/' + this.emailCatcher.id, {}).then((response) => {
-                });
+
             },
+
             storeSubscription() {
-                axios.post('pre-register', {
-                    email: this.emailSubscriber.email_address,
-                }).then(() => {
-                });
+
             },
+
             notifyUser() {
                 this.success = true;
                 setTimeout(() => {
