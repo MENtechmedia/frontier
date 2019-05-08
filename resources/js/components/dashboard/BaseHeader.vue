@@ -13,7 +13,7 @@
                 <div class="mt-20 px-20 relative">
 
                     <!--Website title-->
-                    <h1 class="text-white mb-5 tracking-wide"> MELVIN TEHUBIJULUW </h1>
+                    <h1 class="text-white mb-5 tracking-wide"> ERIC LANDHEERRR </h1>
 
                     <!--Website select dropdown -->
                     <div class="w-full relative portrait-photo">
