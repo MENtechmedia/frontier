@@ -87,8 +87,11 @@ class ScriptController extends Controller
      */
     public function download()
     {
-        $script = exec('cd ../ && npm run production', $output);
+        /**
+         * Run npm from command line
+         */
+        $script = exec('cd ../ && npm --version', $output, $status);
 
-        return [$script, $output];
+        return [$script, $output, $status];
     }
 }
