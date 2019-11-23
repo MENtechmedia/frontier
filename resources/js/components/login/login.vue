@@ -147,7 +147,7 @@
                 let strippedName = this.$options.filters.strippedLowerCase(value);
 
                 if(strippedName.length >= 5) {
-                    axios.get("https://api.frontier.social/api/website/byName/" + value).then((response) => {
+                    axios.get("http://api.frontier.test/api/website/byName/" + value).then((response) => {
                         if(response.data != [])
                             this.existing_website = response.data;
                     });

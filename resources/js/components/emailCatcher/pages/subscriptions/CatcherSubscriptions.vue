@@ -109,7 +109,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        axios.delete("https://api.frontier.social/api/emailSubscription/" + id).then((response) => {
+                        axios.delete("http://api.frontier.test/api/emailSubscription/" + id).then((response) => {
                             let removeIndex = this.subscriptions.map(function(subscription) {
                                 return subscription.id;
                             }).indexOf(id);
@@ -121,7 +121,7 @@
             },
 
             all() {
-                axios.get("https://api.frontier.social/api/emailSubscription").then((response) => {
+                axios.get("http://api.frontier.test/api/emailSubscription").then((response) => {
                     this.subscriptions = response.data.data;
                 });
             },

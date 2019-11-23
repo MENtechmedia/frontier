@@ -232,7 +232,7 @@
         methods: {
 
             add() {
-                axios.post("https://api.frontier.social/api/emailCatcherTheme", {
+                axios.post("http://api.frontier.test/api/emailCatcherTheme", {
                     name: this.name,
                     submit_button_color: this.submitButtonColor,
                     submit_button_background_color: this.submitButtonBackgroundColor,
@@ -298,7 +298,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        axios.delete("https://api.frontier.social/api/emailCatcherTheme/" + id).then((response) => {
+                        axios.delete("http://api.frontier.test/api/emailCatcherTheme/" + id).then((response) => {
                             let removeIndex = this.themes.map(function(theme) {
                                 return theme.id;
                             }).indexOf(id);
@@ -312,7 +312,7 @@
             },
 
             all() {
-                axios.get("https://api.frontier.social/api/emailCatcherTheme").then((response) => {
+                axios.get("http://api.frontier.test/api/emailCatcherTheme").then((response) => {
                     this.themes = response.data.data;
                 });
             },

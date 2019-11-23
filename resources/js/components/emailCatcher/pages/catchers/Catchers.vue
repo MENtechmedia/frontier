@@ -147,7 +147,7 @@
         methods: {
 
             add() {
-                axios.post("https://api.frontier.social/api/emailCatcher", {
+                axios.post("http://api.frontier.test/api/emailCatcher", {
                     name: this.name,
                     label: this.label,
                     title: this.title,
@@ -200,7 +200,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        axios.delete("https://api.frontier.social/api/emailCatcher/" + id).then((response) => {
+                        axios.delete("http://api.frontier.test/api/emailCatcher/" + id).then((response) => {
                             let removeIndex = this.catchers.map(function(catcher) {
                                 return catcher.id;
                             }).indexOf(id);
@@ -214,13 +214,13 @@
             },
 
             all() {
-                axios.get("https://api.frontier.social/api/emailCatcher").then((response) => {
+                axios.get("http://api.frontier.test/api/emailCatcher").then((response) => {
                     this.catchers = response.data.data;
                 });
             },
 
             getEmailCatcherThemes() {
-                axios.get("https://api.frontier.social/api/emailCatcherTheme").then((response) => {
+                axios.get("http://api.frontier.test/api/emailCatcherTheme").then((response) => {
                     this.email_catcher_themes = response.data.data;
                 });
             }

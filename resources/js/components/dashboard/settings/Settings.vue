@@ -112,7 +112,7 @@
             },
 
             all() {
-                axios.get("https://api.frontier.social/api/settings").then((response) => {
+                axios.get("http://api.frontier.test/api/settings").then((response) => {
                     this.settings = response.data.data['0'];
 
                     if(this.settings != null) {

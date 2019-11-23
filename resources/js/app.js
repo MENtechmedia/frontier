@@ -9,7 +9,7 @@ import {router} from './routes/web.js';
 axios.request({
     url: "/oauth/token",
     method: "post",
-    baseURL: "https://api.frontier.social",
+    baseURL: "http://api.frontier.test",
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
         'Access-Control-Allow-Headers': 'X-CSRF-Token',

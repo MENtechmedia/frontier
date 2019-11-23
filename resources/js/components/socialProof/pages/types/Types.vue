@@ -157,7 +157,7 @@
             add() {
 
 
-                axios.post("https://api.frontier.social/api/eventType", {
+                axios.post("http://api.frontier.test/api/eventType", {
                     name: this.name,
                     icon: this.icon,
                     user_generated: this.user_generated,
@@ -194,7 +194,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        axios.delete("https://api.frontier.social/api/eventType/" + id).then((response) => {
+                        axios.delete("http://api.frontier.test/api/eventType/" + id).then((response) => {
                             let removeIndex = this.types.map(function(type) {
                                 return type.id;
                             }).indexOf(id);
@@ -206,13 +206,13 @@
             },
 
             all() {
-                axios.get("https://api.frontier.social/api/eventType").then((response) => {
+                axios.get("http://api.frontier.test/api/eventType").then((response) => {
                     this.types = response.data.data;
                 });
             },
 
             getSocialProofThemes() {
-                axios.get("https://api.frontier.social/api/socialProofTheme").then((response) => {
+                axios.get("http://api.frontier.test/api/socialProofTheme").then((response) => {
                     this.social_proof_themes = response.data.data;
                 });
             },
